@@ -1,0 +1,23 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: '<code>fmt.Printf</code> and <code>fmt.Sprintf</code> should have <i>at least</i>
+    two arguments, one of them is a string template '
+- text: If <code>fmt.Println</code>,<code> fmt.Print</code> and <code>fmt.Sprint</code>
+    accept more than one argument, they are concatenated with space
+- text: <code>fmt.Printf</code> and <code>fmt.Sprintf</code> will throw error if we
+    try to format <code>%%</code>
+- text: <code>fmt.Println</code>,<code> fmt.Print</code> and <code>fmt.Sprint</code>
+    only accept one argument
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: main.go
+  visible: true
+  text: |+
+    // You can experiment here, it won’t be checked
+
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/16863#comment
+status: Unchecked
+record: -1

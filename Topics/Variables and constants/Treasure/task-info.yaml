@@ -1,0 +1,12 @@
+type: code
+files:
+- name: main.go
+  visible: true
+  text: // Declare a "chest" variable
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/14473#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 28 Feb 2022 03:12:30 UTC
+record: -1

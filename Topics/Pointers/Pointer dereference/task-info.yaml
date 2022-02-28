@@ -1,0 +1,18 @@
+type: code
+files:
+- name: main.go
+  visible: true
+  text: |-
+    package main
+
+    import "fmt"
+
+    func solve(p *int) int {
+        var v = ? // assign the value
+
+        return v
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15468#comment
+status: Unchecked
+record: -1

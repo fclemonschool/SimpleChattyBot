@@ -1,0 +1,15 @@
+type: code
+files:
+- name: main.go
+  visible: true
+  text: "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Line 1\"\
+    )\n    // fmt.Println(\"Longer than line 1\")\n    fmt.Println(\"Longer than line\
+    \  2 \")\n    // fmt.Println(\"This is the longest line in this exercise\")\n\
+    \    fmt.Println(\"Shorter please\")  \n}"
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/16698#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 28 Feb 2022 01:41:55 UTC
+record: -1

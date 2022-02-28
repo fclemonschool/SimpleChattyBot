@@ -1,0 +1,16 @@
+type: code
+files:
+- name: main.go
+  visible: true
+  text: "package main\n\nimport \"fmt\"    \n\nfunc makeURL() (redirectURL string)\
+    \ {\n    // Concatenate response parts into the redirectURL variable.\n    //\
+    \ Parts are provided below:\n    var (\n        protocol   = \"https://\"\n  \
+    \      domain     = \"hyperskill.org/\"\n        path       = \"golang-track?\"\
+    \n        parameters = \"gems=1500\"\n    )\n    redirectURL =\n    return\n}"
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15417#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 28 Feb 2022 10:12:21 UTC
+record: -1

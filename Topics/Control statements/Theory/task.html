@@ -1,0 +1,142 @@
+<h2>Control statements</h2>
+<html>
+ <head></head>
+ <body>
+  <p>Conditional statements are constructs that allow a program to perform different operations depending on the value of a Boolean expression. In simple terms, these statements control the flow of our program and determine what to do next, based on whether a certain condition is met or not. In this topic, we'll learn about the conditional statements that we can implement in Go.</p> 
+  <h5>The if statement</h5> 
+  <p>When we develop our code, often we need to make a decision based on some condition. In Go, we can do this with the help of the <strong>if</strong> statement. The <code class="language-go">if</code> statement is used to execute a block of code only if the specified condition is <code class="language-go">true</code>; otherwise, the program skips this part of the code.</p> 
+  <p>The simplest form of the conditional statement consists of the keyword <code class="language-go">if</code>, followed by a boolean expression, and a body enclosed in curly braces. Let's take a look at the code example below:</p> 
+  <pre><code class="language-go">package main
+
+import "fmt"
+
+func main() {  
+    number := 4
+    if number % 2 == 0 { // checks if the number is even
+        fmt.Println("The number", number, "is even")
+    }
+}</code></pre> 
+  <p>In the seventh line, the condition <code class="language-go">number % 2 == 0</code> evaluates whether the remainder of dividing <code class="language-go">number</code> by 2 is 0 or not. Since the remainder is 0, the condition is <code class="language-go">true</code> and the program prints "The number 4 is even" into the terminal.</p> 
+  <p>Alternatively, if the value of <code class="language-go">number</code> was 3 instead of 4, the condition would become <code class="language-go">false</code>, the program would skip the body within the <code class="language-go">if</code> statement and finish with an empty output.</p> 
+  <h5>The if-else statement</h5> 
+  <p>It is important to know that you can extend an <code class="language-go">if</code> statement with an <strong>else</strong> statement and execute another block of code if the condition is <code class="language-go">false</code>. Let's take a look at an updated version of the code snippet above:</p> 
+  <pre><code class="language-go">package main
+
+import "fmt"
+
+func main() {
+    number := 5
+    if number % 2 == 0 { // checks if the number is even
+        fmt.Println("The number", number, "is even")
+    } else {
+        fmt.Println("The number", number, "is odd")
+    }
+}</code></pre> 
+  <p>In the sixth line, we can see that the updated value of <code class="language-go">number</code> is the odd number 5, and in the ninth line, we can see the newly implemented <code class="language-go">else</code> statement. In this case, our program will evaluate the <code class="language-go">number % 2 == 0</code> condition as <code class="language-go">false</code>, skip the body of the <code class="language-go">if</code> statement and execute the body of the <code class="language-go">else</code> statement instead, printing "The number 5 is odd" into our terminal.</p> 
+  <h5>The if-else if statement</h5> 
+  <p>In contrast to the <code class="language-go">if-else</code> statement that checks if the condition is either <code class="language-go">true</code> or <code class="language-go">false</code>, the <strong>else if</strong> statement can help us check several possible conditions. Let's evaluate the <code class="language-go">else if</code> statement in action in the code snippet below:</p> 
+  <pre><code class="language-go">package main
+
+import "fmt"
+
+func main() {
+    var score int = ... // Your test score goes here.
+
+    if score &gt; 90 {
+        fmt.Println("Your grade is A. Congratulations!")
+    } else if score &gt; 80 {
+        fmt.Println("Your grade is B. Good enough.")
+    } else if score &gt; 70 {
+        fmt.Println("Your grade is C. Could've done better!")
+    } else if score &gt; 60 {
+        fmt.Println("Your grade is D. Study more next time!")
+    } else {
+        fmt.Println("Your grade is F. Terrible! you failed the test!")
+    }
+}</code></pre> 
+  <p>In this case, the conditions are evaluated from top to bottom. For example, if the value of the <code class="language-go">score</code> variable is 92, the program will execute the first condition: <code class="language-go">score &gt; 90</code> and print "Your grade is A. Congratulations!". However, if the value of <code class="language-go">score</code> is 64 instead, the program will skip the bodies of the first and second conditions until it reaches the third condition: <code class="language-go">score &gt; 60</code>. Since this condition is <code class="language-go">true</code>, the program will execute the body within the third condition, printing "Your grade is D. Study more next time!" into our terminal.</p> 
+  <h5>The switch statement</h5> 
+  <p>So far we've seen the <code class="language-go">if</code>, <code class="language-go">else</code> and <code class="language-go">else if</code> statements. They work great for simple evaluation cases, but when we try to use them with a large number of conditions, the code becomes difficult to read. For situations like this, the <strong>switch</strong> statement provides a simple and organized way to choose between multiple conditions. Let's check out the <code class="language-go">switch</code> statement in action, when it's used in a computer game programmed in Go:</p> 
+  <pre><code class="language-go">package main
+
+import "fmt"
+
+func main() {
+    var selection int = ... // Your selection goes here.
+
+    switch selection {
+    case 1:
+        fmt.Println("Starting a new game!")
+        ...
+    case 2:
+        fmt.Println("Loading a saved game.")
+        ...
+    case 3:
+        fmt.Println("Quit the game.")
+        ...
+    default:
+        fmt.Println("Invalid selection. Try again.")
+    }
+}</code></pre> 
+  <p>In the sixth line, we have the variable <code class="language-go">selection</code> that we will evaluate in the <code class="language-go">switch</code> construct through several <strong>case</strong> statements. For example, if the value of <code class="language-go">selection</code> was 2, the program would execute<code class="language-go">case 2</code> and print "Loading a saved game." into the terminal, allowing us to continue a previously saved game.</p> 
+  <p>Near the end of the <code class="language-go">switch</code> statement, we can see the special <strong>default</strong> case. It gets executed if none of the other cases is <code class="language-go">true</code>. You can place the<code class="language-go">default</code> case in any part of the switch statement, but following the Go coding style convention, you should place it at the end of the switch statement.</p> 
+  <p></p>
+  <div class="alert alert-primary">
+   Finally, if you are familiar with other programming languages such as Java or the C family of languages, you may have seen the 
+   <code class="language-go">break</code> statement used at the end of each case body. In Go, the 
+   <code class="language-go">break</code> statement is provided automatically, so there is no need for us to hard code it within our switch statement. In simple terms, the function of the 
+   <code class="language-go">break</code> statement is to step out of the 
+   <code class="language-go">switch</code> construct after executing the code block within the case.
+  </div>
+  <p></p> 
+  <h5>The versatility of the switch statement</h5> 
+  <p>In Go, we have versatile <code class="language-go">switch</code> statements. This means we can match a variable to a single value, multiple values, match it based on expressions and logic, or even use it without an expression, which would be the equivalent of a multiline <code class="language-go">if-else</code> statement. Let's take a look at using the <code class="language-go">switch</code> statement without an expression:</p> 
+  <pre><code class="language-go">package main
+
+import "fmt"
+
+func main() {
+    var number int = ... // Your number goes here.
+
+    switch { // equivalent to switch true: this switch statement will always get executed.
+    case number % 2 == 0:
+        fmt.Println("The number", number, "is even")
+    case number % 2 != 0:
+        fmt.Println("The number", number, "is odd")
+}</code></pre> 
+  <p>In this example, the <code class="language-go">switch</code> statement will always get executed within our program. This <code class="language-go">switch</code> statement will evaluate each <code class="language-go">case</code> as a boolean expression; since this example is very similar to the previously explained code snippets, you can easily infer the output of the program based on the value of the <code class="language-go">number</code> variable.</p> 
+  <p>An important detail is that all <code class="language-go">case</code> statements when working with the <code class="language-go">switch</code> construct must be unique. Every constant, even in a list of multiple values, is checked against the entire <code class="language-go">switch</code> statement, and if there is a duplicate value, an error will be reported when trying to execute our program. Let's take a look at an invalid <code class="language-go">switch</code> statement:</p> 
+  <pre><code class="language-go">package main
+
+import "fmt"
+
+func main() {
+    letter: = "a"
+
+    switch letter {
+    case "a", "e", "i", "o", "u":
+        fmt.Println("The letter", letter, "is a vowel")
+    case "a", "e", "i", "o", "u":
+        fmt.Println("The letter", letter, "is a vowel")
+    default:
+        fmt.Println("The letter", letter, "is a consonant")
+    }
+}</code></pre> 
+  <p>Since the second case is a duplicate of the first case, our program will output the following error when we try to run it:</p> 
+  <pre><code class="language-bash">.\main.go:11:7: duplicate case "a" in switch
+        previous case at .\main.go:9:7
+.\main.go:11:12: duplicate case "e" in switch
+        previous case at .\main.go:9:12
+...</code></pre> 
+  <h5>Summary</h5> 
+  <p>Let's sum up what we've learned so far:</p> 
+  <ul> 
+   <li>The <code class="language-go">if</code> construct is the simplest form of conditional statements in Go. It only executes the code block within the <code class="language-go">if</code> body if the evaluated expression is <code class="language-go">true</code>.</li> 
+   <li>The <code class="language-go">else</code> statement can extend the <code class="language-go">if</code> statement by evaluating if the expression is false instead of true.</li> 
+   <li>The <code class="language-go">else if</code> statement extends the <code class="language-go">if</code> construct by letting us evaluate several different conditions.</li> 
+   <li>The <code class="language-go">switch</code> statement provides a simple and organized way to choose between multiple conditions. We can use it to match a variable to a single value, multiple values, match it based on expressions and logic, or even use it without an expression.</li> 
+   <li>The <code class="language-go">case</code> statements within the <code class="language-go">switch</code> construct must always be unique! Otherwise, our program will report a duplicate error when trying to run the repeating part.</li> 
+  </ul> 
+  <p>We're not done yet! Let's do some exercises now and test our knowledge of conditional statements.</p>
+ </body>
+</html>

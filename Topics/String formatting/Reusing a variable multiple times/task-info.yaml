@@ -1,0 +1,13 @@
+type: code
+files:
+- name: main.go
+  visible: true
+  text: "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tfmt.Printf(\"%[1]d %[?]d\
+    \ %[1]?\", ?)\n}"
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/16867#comment
+status: Solved
+feedback:
+  message: <html>Passed. John thanks you so much</html>
+  time: Mon, 28 Feb 2022 10:30:17 UTC
+record: -1

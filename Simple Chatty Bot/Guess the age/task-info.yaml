@@ -1,0 +1,23 @@
+type: remote_edu
+files:
+- name: tests.py
+  visible: false
+  learner_created: false
+- name: main.go
+  visible: true
+  text: "package main\n\nimport (\n\t\"fmt\"\n\t\"strconv\"\n)\n\nfunc main() {\n\t\
+    fmt.Println(\"Hello! My name is Aid.\")\n\tfmt.Println(\"I was created in 2020.\"\
+    )\n\tfmt.Println(\"Please, remind me your name.\")\n\n\tvar name string\n\tfmt.Scan(&name)\n\
+    \n\tfmt.Println(\"What a great name you have, \" + name + \"!\")\n\tfmt.Println(\"\
+    Let me guess your age.\")\n\tfmt.Println(\"Enter remainders of dividing your age\
+    \ by 3, 5 and 7.\")\n\n\t// reading all remainders\n\n\tfmt.Println(\"Your age\
+    \ is \" + strconv.Itoa(age) + \"; that's a good time to start programming!\")\n\
+    }\n"
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15500#comment
+check_profile: hyperskill_go
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 28 Feb 2022 09:19:45 UTC
+record: 3

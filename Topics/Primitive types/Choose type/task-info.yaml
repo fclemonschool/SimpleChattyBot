@@ -1,0 +1,14 @@
+type: code
+files:
+- name: main.go
+  visible: true
+  text: "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\tvar r ?\n    r\
+    \ = 'a'\n\n    var i ?\n    i = 1\n\n    var b ?\n    b = true\n\n\tfmt.Printf(\"\
+    %c %d %t\", r, i, b) // do not remove this line\n}"
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/16878#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 28 Feb 2022 10:02:32 UTC
+record: -1

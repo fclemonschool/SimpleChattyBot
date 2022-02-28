@@ -1,0 +1,16 @@
+type: code
+custom_name: Go! Golang comments!
+files:
+- name: main.go
+  visible: true
+  text: "package main\n\nimport \"fmt\"\n\nfunc main(){   \n    /*\n    // fmt.Println(\"\
+    1\")\n    // fmt.Println(\"@\")\n    // fmt.Println(\"Go!\")\n    // fmt.Println(\"\
+    Hello, \")\n\n    // fmt.Println(\"Golang!!\")\n    // fmt.Println(\"World\")\n\
+    \n    fmt.Println(\"Go go go!!!\")\n    */  \n}"
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/16697#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 28 Feb 2022 01:41:34 UTC
+record: -1

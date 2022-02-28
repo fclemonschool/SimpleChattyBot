@@ -1,0 +1,185 @@
+<h2>Function decomposition</h2>
+<html>
+ <head></head>
+ <body>
+  <p>Now you know most of the basic skills in Go programming, like using functions, creating variables, and writing a simple Go program. Real programming is not just staying at small-sized programs; we'll soon build bigger applications that we can't put all in one function. So, the technique we will learn in this topic is <strong>functional decomposition</strong>. Essentially, it means splitting a big function into smaller ones.</p> 
+  <h5>Real-life implementation</h5> 
+  <p>Decomposing the <code class="language-go">main</code> function could be a real-life Golang example, but we'll use an imaginary piece of code.</p> 
+  <p></p>
+  <div class="alert alert-primary">
+    For the sake of simplicity, we choose a not-so-long piece of code, but the principles of decomposition are still relevant for it. 
+  </div>
+  <p></p> 
+  <p>Once upon a time, no computer existed to help humans solve problems. Magicians had to risk their lives: they sought to meet a dragon, answered the creature's riddle, and if the answer pleased the dragon, it would help the magicians solve their problems. Now imagine yourself standing in front of a dragon. Try to answer the dragon's question: "What is <a target="_blank" href="https://news.mit.edu/2019/answer-life-universe-and-everything-sum-three-cubes-mathematics-0910" rel="noopener noreferrer nofollow">the meaning of life</a>?". What would be your actions?</p> 
+  <ul> 
+   <li>Be brave and answer the dragon directly,</li> 
+   <li>Trick it by saying "I don't know",</li> 
+   <li>Fleeing away: maybe the dragon won't get angry and burn you to dust.</li> 
+  </ul> 
+  <p>Let's implement this story in Go<em>:</em></p> 
+  <pre><code class="language-go">package main
+
+import (
+    "fmt"
+)
+
+func main() {
+    // Dragon:
+    fmt.Println("What is the meaning of life?")
+    var action string
+    fmt.Scanln(&amp;action)
+
+    // User chooses action:
+    switch action {
+    case "Answer":
+        var ans string
+        fmt.Scanln(&amp;ans)
+
+        // Dragon reacts:
+        if ans == "42" {
+            fmt.Println("You are right!")
+        } else if ans == "I don't know." {
+            fmt.Println("You are wrong!")
+        } else {
+            fmt.Println("You are so afraid!")
+        }
+
+    case "Trick":
+        // Dragon reacts:
+        fmt.Println("I like what you're trying to do, but I can't help those who are too lazy to think!")
+
+    case "Run":
+        // Dragon reacts:
+        fmt.Println("Arr!! How dare you run away!?")
+    }
+}</code></pre> 
+  <p>It's difficult to follow what's going on because so many things are happening in this code. Despite its complexity, this script would work as we expect: we could leave it as it is, and it would solve our problem perfectly.</p> 
+  <p>But what if we want to extend the program, add more action, or find more ways to answer the dragon's question? We could also expand the story even more, by adding another character, perhaps?</p> 
+  <p>In general, the more functionality we want our program to provide, the more we need to decompose the <code class="language-go">main</code> function into smaller functions.</p> 
+  <h5>Functional decomposition and repeated patterns</h5> 
+  <p><strong>Functional decomposition</strong> helps us to divide a problem into several smaller problems. Every function solves a particular small task, and we can combine them to get the desired results.</p> 
+  <p>If a pattern of code repeats several times, we know it's a sign that we need to move it into a separate function. In the example below, we create a new function to get the user's reaction. We'll call it <code class="language-go">getUserChoice</code>.</p> 
+  <pre><code class="language-go">func getUserChoice() string {
+    var choice string
+    fmt.Scanln(&amp;choice)
+    return choice
+}
+
+func main() {
+    fmt.Println("What is the meaning of life?")
+    action := getUserChoice()
+
+    switch action {
+    case "Answer":
+        ans := getUserChoice()
+        if ans == "42" {
+            fmt.Println("You are right!")
+        } else if ans == "I don't know." {
+            fmt.Println("You are wrong!")
+        } else {
+            fmt.Println("You are so afraid!")
+        }
+
+    case "Trick":
+        fmt.Println("I like what you're trying to do, but I can't help those who are too lazy to think!")
+
+    case "Run":
+        fmt.Println("Arr!! How dare you run away!?")
+    }
+}</code></pre> 
+  <h5>Readability</h5> 
+  <p>Another reason to apply function decomposition is readability. If moving a piece of code to a separate function makes the whole program more readable, we should do it.</p> 
+  <p>The dragon's reply is based on the user's answer. Let's create the <code class="language-go">dragonReplyToAnswer</code> function:</p> 
+  <pre><code class="language-go">func dragonReplyToAnswer(ans string){
+    if ans == "42" {
+        fmt.Println("You are right!")
+    } else if ans == "I don't know." {
+        fmt.Println("You are wrong!")
+    } else {
+        fmt.Println("You are so afraid!")
+    }
+}
+
+func main() {
+    fmt.Println("What is the meaning of life?")
+    action := getUserChoice()
+
+    switch action {
+    case "Answer":
+        ans := getUserChoice()
+        dragonReplyToAnswer(ans)
+
+    case "Trick":
+        fmt.Println("I like what you're trying to do, but I can't help those who are too lazy to think!")
+
+    case "Run":
+        fmt.Println("Arr!! How dare you run away!?")
+    }
+}</code></pre> 
+  <p>As you may notice, every refactoring step makes our main function less cumbersome. It's already a lot easier to read than in the beginning.</p> 
+  <h5>Extensibility</h5> 
+  <p>To make our program easier to extend in the future, we should isolate our switch-case. The reason behind it is that adding a new action should not affect the interaction between the user and the dragon: it's just a new case, but the logic is still the same. </p> 
+  <p>You might find this decomposition too detailed, but we'll leave room to extend the dragon's reaction to different user's actions:</p> 
+  <pre><code class="language-go">func dragonReactToAction(action string) {
+    switch action {
+    case "Answer":
+        ans := getUserChoice()
+        dragonReplyToAnswer(ans)
+
+    case "Trick":
+        dragonDenyAnswer()
+
+    case "Run":
+        dragonBecomeAngry()
+    }
+}
+
+func dragonDenyAnswer() {
+    fmt.Println("I like what you're trying to do, but I can't help those who are too lazy to think!")
+}
+
+func dragonBecomeAngry() {
+    fmt.Println("Arr!! How dare you run away!?")
+}
+
+func main() {
+    fmt.Println("What is the meaning of life?")
+    action := getUserChoice()
+    dragonReactToAction(action)
+}</code></pre> 
+  <p>As we can see, the <code class="language-go">dragonDenyAnswer</code> and <code class="language-go">dragonBecomeAngry</code> functions are just making the program longer. However, they are very convenient if you want to add more functionality in the future.</p> 
+  <h5>The result</h5> 
+  <p>Let's see our <code class="language-go">main</code> function after all applied modifications:</p> 
+  <pre><code class="language-go">package main
+
+import (
+    "fmt"
+)
+
+func main() {
+    fmt.Println("What is the meaning of life?")
+    action := getUserChoice()
+    dragonReactToAction(action)
+}</code></pre> 
+  <p>After the decomposition, we add more functions and make our program longer, but now our program has many advantages:</p> 
+  <ul> 
+   <li>it is more readable,</li> 
+   <li>it's easier to extend or change the logic in it,</li> 
+   <li>we don't have repeated pieces of code in it.</li> 
+  </ul> 
+  <p>For example, if we want to add a new option for the user to choose from (like <code class="language-go">Fight</code>), we will add a new reaction to the <code class="language-go">dragonReactToAction</code> function. If we want to add more ways of how the dragon gets angry, we will add some lines of code to the <code class="language-go">dragonBecomeAngry</code> function. If we need to add more ways to react to the user's answer, we will add them to the <code class="language-go">dragonReplyToAnswer</code>.</p> 
+  <p></p>
+  <div class="alert alert-warning">
+    Function decomposition also helps us in testing. Because every part of the code is a separate component, we can pass the input data to each of them and determine if they work as expected or not. 
+  </div>
+  <p></p> 
+  <h5>Summary</h5> 
+  <p>We've learned about a technique called function decomposition. This skill allows us to:</p> 
+  <ul> 
+   <li> Structure the code better;</li> 
+   <li> Make our code more readable;</li> 
+   <li> Extend the program or change the logic more easily;</li> 
+   <li> Test each function more conveniently.</li> 
+  </ul>
+ </body>
+</html>

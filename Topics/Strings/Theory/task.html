@@ -1,0 +1,75 @@
+<h2>Strings</h2>
+<html>
+ <head></head>
+ <body>
+  <p>Like in many other programming languages, strings are commonly used in Go. However, their use here is quite different from other languages like Java, C++, Python, etc. Let's look at them in detail.</p> 
+  <h5 style="text-align: center;">Strings and string declaration</h5> 
+  <p>Putting simply, a string is a sequence of variable-width characters, each of them represented by one or more bytes using <a target="_blank" href="https://en.wikipedia.org/wiki/UTF-8?" rel="noopener noreferrer nofollow">UTF-8 Encoding</a>. It might sound scary, but it's basically about the fact that you can put any existing symbol in it, and we will show you exactly how.</p> 
+  <p>We declare a string in double quotes, and there can be special characters inside these double quotes, such as line breaks or tabs:</p> 
+  <pre><code class="language-go">// The default value for string is "" or `` - empty string
+var myFirstString string
+
+// A string with special characters
+var iAmSpecial string = "Hello\n\t"
+
+/*
+    Escape sequence Value
+    \n A newline character
+    \t A tab character
+    \" Double quotation marks
+    \\ A backslash
+*/</code></pre> 
+  <p>In case you need a string with special characters, all you have to do is put it in backticks:</p> 
+  <pre><code class="language-go">fmt.Println("ABOBA\n\t") // This string consits of the word ABOBA, a new line and tabulation
+/* Output:
+ABOBA
+	
+
+*/
+
+fmt.Println(`ABOBA\n\t`) // This string consits of the word ABOBA\n\t
+/* Output:
+ABOBA\n\t
+*/</code></pre> 
+  <p>String contents are immutable in Golang, so when we concatenate two strings, it creates a new one in memory:</p> 
+  <pre><code class="language-go">discover := "hello"               // the variable contains the "hello" string
+
+discover = discover + " there"    // the variable contains a new "hello there" string;
+                                  // the "hello" string soon will be removed from memory
+
+discover = "world"                // the variable again has a new value;
+                                  // the "hello there" string soon will be removed from memory</code></pre> 
+  <p>The actual strings like "hello" and "world" are immutable, but you can change the value of a string variable. However, it still means that the string "hello" exists somewhere in memory, and Go will not change the contents of that memory location.</p> 
+  <h5 style="text-align: center;">UTF-8</h5> 
+  <p>Remember we mentioned the scary word UTF-8? Shortly, it means that you can have a string with symbols from almost any alphabet.</p> 
+  <p></p>
+  <div class="alert alert-primary">
+    Side note: in standard UTF-8 Unicode, character representations occupy from 1 to 4 bytes. 
+  </div>
+  <p></p> 
+  <pre><code class="language-go">// UTF-8 from box
+var russian = "Привет, Мир!"
+
+korean := "안녕하세요 월드입니다!"
+
+var emoji string = "🙋🌍❗"</code></pre> 
+  <p>As we've mentioned earlier, each string is a sequence of bytes. Hence, if you need to find out its byte length, you can use the function <code class="language-go">len(yourStringName)</code>.</p> 
+  <pre><code class="language-go">asciiString := "ABCDE"
+utf8String  := "БГДЖИ"
+
+fmt.Println(len(asciiString)) // 5
+fmt.Println(len(utf8String))  // 10</code></pre> 
+  <p> </p> 
+  <h5 style="text-align: center;">Runes</h5> 
+  <p>Go uses <code class="language-go">rune</code> values to represent Unicode characters – it's all about UTF-8. Besides, you can assume that strings are not only sequences of bytes, but sequences of runes. Remember the example above? If you are interested in the length of a string in characters, use the function <code class="language-go">RuneCountInString</code> from <code class="language-go">unicode/utf8</code> package:</p> 
+  <pre><code class="language-go">utf8.RuneCountInString(asciiString) // 5
+utf8.RuneCountInString(utf8String)  // 5
+
+// Emoji example 🗿
+len(emoji)                          // 11
+utf8.RuneCountInString(emoji)       // 3</code></pre> 
+  <h5 style="text-align: center;">Conclusion</h5> 
+  <p>Now let's briefly remind ourselves how this topic was useful. We have learned that Go supports two styles of string literals: the double-quote style and the back-quote style (or raw string literals). The zero values of string types are blank strings, represented with <code class="language-go">""</code> or <code class="language-go">``</code> in literal. </p> 
+  <p>Final remark: for safer work with strings, you should convert them into <code class="language-go">[]rune</code> , but we will cover it in detail in another topic.</p>
+ </body>
+</html>

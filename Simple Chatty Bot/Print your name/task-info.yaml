@@ -1,0 +1,19 @@
+type: remote_edu
+files:
+- name: tests.py
+  visible: false
+  learner_created: false
+- name: main.go
+  visible: true
+  text: "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tfmt.Println(\"Hello! My\
+    \ name is Aid.\")\n\tfmt.Println(\"I was created in 2020.\")\n\tfmt.Println(\"\
+    Please, remind me your name.\")\n\n\t// reading a name\n\n\tfmt.Println(\"What\
+    \ a great name you have, \" + name + \"!\")\n}\n"
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15499#comment
+check_profile: hyperskill_go
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 28 Feb 2022 09:16:31 UTC
+record: 2

@@ -1,0 +1,122 @@
+<h2>String formatting</h2>
+<html>
+ <head></head>
+ <body>
+  <p><strong>String formatting</strong> helps us save time to solve complicated tasks.</p> 
+  <p>For example, if we need to print the hex value of a decimal number <code class="language-go">100000</code> (which is <code class="language-go">186a0</code>) to the console, normally we wouldn't input this value by hand. We can solve this task more conveniently with string formatting.</p> 
+  <p>In this topic, we'll learn how to use string formatting in Go. Overall, there are two ways to do this:</p> 
+  <ul> 
+   <li>Printing a formatted string with the <code class="language-go">Printf()</code> function;</li> 
+   <li>Formatting and returning the string by using the <code class="language-go">Sprintf()</code> function instead of printing it to the console.</li> 
+  </ul> 
+  <p>Both methods are in the <code class="language-go">fmt</code> package.</p> 
+  <h5 id="introduction-to-fmtprintf">Introduction to fmt.Printf()</h5> 
+  <p><code class="language-go">fmt.Printf()</code> accepts at least one argument. Our first option is to use <code class="language-go">fmt.Printf</code> as an alternative to <code class="language-go">fmt.Print</code>:</p> 
+  <pre><code class="language-go">fmt.Printf("kitty1\nkitty2")
+fmt.Printf("\n")
+fmt.Printf("kitty1\tkitty2")
+// kitty1
+// kitty2
+// kitty1  kitty2</code></pre> 
+  <p>However, in most cases, we pass two or more arguments to<code class="language-go">fmt.Printf()</code>. The first one is the string template that contains the text that we want to format, together with one or more <strong>verbs</strong> (or <strong>format specifiers</strong>) that specify how we want the string template to be formatted. All remaining arguments are variables that store the value of what we want to format.</p> 
+  <p>For example, look at the following code snippet:</p> 
+  <pre><code class="language-go">s := "Golang"
+a := "young"
+fmt.Printf("We are %s hackers, we are so %s", s, a) // We are Golang hackers, we are so young</code></pre> 
+  <p></p>
+  <div class="alert alert-primary">
+   Note that other functions in the 
+   <code class="language-go">fmt</code> package that end with the 
+   <code class="language-go">f</code> character usually have the format string functionality.
+  </div>
+  <p></p> 
+  <h5 id="formatting-strings-with-different-verbs">Formatting strings with different verbs</h5> 
+  <p>In this section, we are going to consider different format specifiers that we can use to format strings. </p> 
+  <p>Let's begin with numeric values. Take a look at the following examples:</p> 
+  <pre><code class="language-go">// Using %d to print an int value
+fmt.Printf("%d", 36) // 36</code></pre> 
+  <p>When using this verb, we can specify the precision field length by a decimal number. To do this, we need to put a dot and then the precision length, like in the example below. If we don't specify a special value, <code class="language-go">Printf()</code> will use the default value of the width and the precision length:</p> 
+  <pre><code class="language-go">// Using %f to print a float value with default width and precision
+fmt.Printf("%f", 20.66) // 20.660000
+
+// Using %f with the precision length 1
+fmt.Printf("%.1f", 20.33) // 20.3</code></pre> 
+  <p>Now, this is how we format strings, characters, and boolean values:</p> 
+  <pre><code class="language-go">// The %c formatter is convenient for formatting characters
+fmt.Printf("%c", 't') // t
+
+// The %s formatter is great to format a string
+fmt.Printf("%s", "This is a random string") // This is a random string
+
+// The %t formatter is suitable for Boolean values
+fmt.Printf("%t", false) // false</code></pre> 
+  <p>And this is how we format the width of string values:</p> 
+  <pre><code class="language-go">// Formatting the width of a string
+fmt.Printf("|%8s|", "pikachu") // | pikachu| (this action added one additional space where the string begins)</code></pre> 
+  <p>Finally, we can use the <code class="language-go">%%</code> verb to format a raw "%" string:</p> 
+  <pre><code class="language-go">fmt.Printf("%%") // %</code></pre> 
+  <h5 id="explicit-argument-indexes">Explicit argument indexes</h5> 
+  <p>Now, sometimes we might need to use a variable more than once or format multiple variables in a different order. We can do it by using <code class="language-go">[]</code> square brackets.</p> 
+  <p>The number inside the square brackets <code class="language-go">[]</code> between the <code class="language-go">%</code> character and the verb denote the replacement of the corresponding variable when formatting the string. This means we can use this symbol to express how many times a variable appears or change the order of the variables when formatting a string:</p> 
+  <pre><code class="language-go">a := "First variable"
+b := "Second variable"
+fmt.Printf("%[1]s | %[1]s \n", a) // First variable | First variable
+fmt.Printf("%[2]s | %[1]s", a, b) // Second variable | First variable</code></pre> 
+  <h5 id="default-verb-v">Default verb %v</h5> 
+  <p>It is important that we learn about one more verb — the <code class="language-go">%v</code> verb. We can use it in many cases, such as printing the UNICODE number of an emoji or non-English characters, printing the raw form of an array or a slice in Go, or formatting complex numbers. In short, you can format all objects in Go as strings in some way, but in case we don't know how to format them without errors using a built-in verb, we can always pass them to <code class="language-go">%v</code>. This is why we call it the default verb:</p> 
+  <pre><code class="language-go">fmt.Printf("%v",'😄') // 128516 (UNICODE number)
+
+fmt.Printf("%v", []int{1, 2, 3, 4, 5, 6}) // [1 2 3 4 5 6]
+
+fmt.Printf("%v", [3]int{9, 8, 7}) // [9 8 7]
+
+fmt.Printf("%v", 1+5i)// 1+5i (this is a complex number)</code></pre> 
+  <h5 id="other-functions-in-the-fmt-package-sprintf-print-sprint-println-sprintln">Other functions in the fmt package: Sprintf(), Print(), Sprint(), Println(), Sprintln()</h5> 
+  <p>We can create and return strings using <code class="language-go">Sprintf()</code>. This function creates formatted strings without directly printing them:</p> 
+  <pre><code class="language-go">first := fmt.Sprintf("%d", 500) // 'first' variable now has the value of 500
+
+binaryVariable := fmt.Sprintf("%b", 500) // 'binaryVariable' variable now has the value of 111110100</code></pre> 
+  <p><code class="language-go">Print()</code>, <code class="language-go">Sprint()</code>, <code class="language-go">Println()</code>, <code class="language-go">Sprintln()</code> use the default verb <code class="language-go">%v</code>, so we don't need to add any additional string templates or verbs with them.</p> 
+  <p>All these functions can take more than one argument, and the string format in this case will be concatenated.</p> 
+  <p>If the function name has the prefix <code class="language-go">S</code>, it means these functions will return the formatted string as the data object instead of directly printing it to the console. And if the function name has the suffix <code class="language-go">ln</code>, it means the function will add an additional newline at the end of the formatted string.</p> 
+  <p>The <code class="language-go">Print()</code> function uses the same style of arguments as <code class="language-go">Printf()</code>:</p> 
+  <pre><code class="language-go">fmt.Print("Hello") // Hello
+
+x := "World"
+
+fmt.Print("Hello, ", x) // Hello, World</code></pre> 
+  <p>And here's an example of a function that ends with the <code class="language-go">ln</code> suffix:</p> 
+  <pre><code class="language-go">s := fmt.Sprintln("if you try to print s,",
+                  "it will automatically print a new line at the end of the string")
+
+fmt.Print(s, "Newline")
+
+/*
+Output:
+if you try to print s, it will automatically print a new line at the end of the string
+Newline
+*/</code></pre> 
+  <h5 id="formatting-multiline-string-with-backticks">Formatting multiline string with backticks</h5> 
+  <p>Additionally, we can use raw string literals by wrapping string sequences between the back quotes <code class="language-go">`...`</code>.</p> 
+  <p>This technique can help us easily write multiline formatted strings. Notice that special characters like <code class="language-go">\n</code> newline will not be interpreted within raw string literals:</p> 
+  <pre><code class="language-go">fmt.Printf(`%s 
+and
+the
+brave
+new\n
+world\n`,"Go")
+
+/*
+Output:
+Go 
+and
+the
+brave
+new\n
+world\n
+*/</code></pre> 
+  <h5 id="conclusion">Conclusion</h5> 
+  <p>In this topic, we've learned that Golang has many built-in functions to format strings. They are all included in the<code class="language-go">fmt</code> package. We've covered the <code class="language-go">fmt.Printf()</code> and <code class="language-go">fmt.Sprintf()</code> functions, as well as different verbs we can use to format strings. We've also looked at the <code class="language-go">Print()</code>, <code class="language-go">Sprint()</code>, <code class="language-go">Println()</code>, <code class="language-go">Sprintln()</code> functions and when we use them.</p> 
+  <p>In practice, formatting strings properly can be very useful, as it allows us to make our code neat and readable. Let's do some exercises now to make sure this information stays with us!</p>
+ </body>
+</html>

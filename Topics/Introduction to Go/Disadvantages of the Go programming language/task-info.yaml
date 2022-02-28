@@ -1,0 +1,25 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Go doesn't have support for a GUI library on its own
+- text: Standard library lacks many basic functions
+- text: Go programs execute slow and have a high memory footprint
+- text: It has light weight compiled binary file size
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: main.go
+  visible: true
+  text: |+
+    // You can experiment here, it won’t be checked
+
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/17079#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Fri, 25 Feb 2022 11:10:00 UTC
+record: -1
+selected_options:
+- 0
+- 1

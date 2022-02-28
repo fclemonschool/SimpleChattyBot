@@ -1,0 +1,16 @@
+type: code
+files:
+- name: main.go
+  visible: true
+  text: "package main\n\nimport \"fmt\"\n\n// func getHalf ...\n\n// halfSum prints\
+    \ the sum of a and b and divides the result by 2\nfunc halfSum(a int, b int) {\n\
+    \tgetHalf(a + b)\n}\n\n// halfSubtract prints the result after substracting b\
+    \ from a and divides the result by 2\nfunc halfSubstract(a int, b int) {\n\tgetHalf(a\
+    \ - b)\n}"
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/17513#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 28 Feb 2022 12:48:37 UTC
+record: -1

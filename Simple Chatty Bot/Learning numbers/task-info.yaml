@@ -1,0 +1,26 @@
+type: remote_edu
+files:
+- name: tests.py
+  visible: false
+  learner_created: false
+- name: main.go
+  visible: true
+  text: "package main\n\nimport (\n\t\"fmt\"\n\t\"strconv\"\n)\n\nfunc main() {\n\t\
+    fmt.Println(\"Hello! My name is Aid.\")\n\tfmt.Println(\"I was created in 2020.\"\
+    )\n\tfmt.Println(\"Please, remind me your name.\")\n\n\tvar name string\n\tfmt.Scan(&name)\n\
+    \n\tfmt.Println(\"What a great name you have, \" + name + \"!\")\n\tfmt.Println(\"\
+    Let me guess your age.\")\n\tfmt.Println(\"Enter remainders of dividing your age\
+    \ by 3, 5 and 7.\")\n\n\tvar rem3, rem5, rem7, age int\n\tfmt.Scan(&rem3, &rem5,\
+    \ &rem7)\n\n\tage = (rem3*70 + rem5*21 + rem7*15) % 105\n\n\tfmt.Println(\"Your\
+    \ age is \" + strconv.Itoa(age) + \"; that's a good time to start programming!\"\
+    )\n\tfmt.Println(\"Now I will prove to you that I can count to any number you\
+    \ want.\")\n\n\t// read a number and count to it here\n\n\tfmt.Println(\"Completed,\
+    \ have a nice day!\")\n}\n"
+  learner_created: false
+feedback_link: https://hyperskill.org/projects/206/stages/1030/implement#comment
+check_profile: hyperskill_go
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 28 Feb 2022 09:22:08 UTC
+record: 4

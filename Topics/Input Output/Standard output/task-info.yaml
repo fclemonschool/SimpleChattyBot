@@ -1,0 +1,18 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: <code>fmt.Print()</code>
+- text: <code>fmt.Println()</code>
+- text: <code>fmt.Scan()</code>
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: main.go
+  visible: true
+  text: |+
+    // You can experiment here, it won’t be checked
+
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/14528#comment
+status: Unchecked
+record: -1

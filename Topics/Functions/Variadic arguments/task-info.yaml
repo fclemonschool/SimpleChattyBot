@@ -1,0 +1,23 @@
+type: code
+files:
+- name: main.go
+  visible: true
+  text: |-
+    package main
+
+    import "fmt"
+
+    func divide(nums float64) float64 {
+        total := 1.0
+        for _, num := range nums {
+            total /= num
+        }
+        return total
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/16393#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 28 Feb 2022 12:25:06 UTC
+record: -1

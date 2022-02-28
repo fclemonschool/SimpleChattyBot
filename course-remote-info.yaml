@@ -1,0 +1,76 @@
+hyperskill_project:
+  id: 206
+  ide_files: https://stepik.org/media/attachments/lesson/584421/additional_files.json
+  is_template_based: true
+  use_ide: true
+update_date: Mon, 28 Feb 2022 10:18:56 UTC
+stages:
+- id: 1027
+  step: 15498
+  is_completed: false
+- id: 1028
+  step: 15499
+  is_completed: false
+- id: 1029
+  step: 15500
+  is_completed: false
+- id: 1030
+  step: 15501
+  is_completed: false
+- id: 1031
+  step: 15502
+  is_completed: false
+topics:
+  0:
+  - title: Introduction to Go
+    theory_id: 17073
+  - title: Comments
+    theory_id: 16689
+  - title: Variables and constants
+    theory_id: 14468
+  - title: Input/Output
+    theory_id: 14527
+  - title: Computer programming
+    theory_id: 8739
+  - title: Paradigms
+    theory_id: 15860
+  - title: Documentation
+    theory_id: 12069
+  1:
+  - title: Binary numbers
+    theory_id: 5544
+  - title: Hexadecimal numbers
+    theory_id: 8788
+  - title: Units of information
+    theory_id: 6865
+  - title: Primitive types
+    theory_id: 16871
+  - title: Unicode
+    theory_id: 7899
+  - title: Strings
+    theory_id: 15412
+  2:
+  - title: Arithmetic operations
+    theory_id: 16679
+  - title: String formatting
+    theory_id: 16860
+  - title: Arithmetic expressions in programming
+    theory_id: 17289
+  3:
+  - title: Control statements
+    theory_id: 16235
+  - title: Loops
+    theory_id: 14707
+  4:
+  - title: Computer algorithms
+    theory_id: 16547
+  - title: Pointers
+    theory_id: 15463
+  - title: Functions
+    theory_id: 16388
+  - title: Function decomposition
+    theory_id: 17506
+  - title: Design principles
+    theory_id: 8956
+  - title: Functions
+    theory_id: 13884

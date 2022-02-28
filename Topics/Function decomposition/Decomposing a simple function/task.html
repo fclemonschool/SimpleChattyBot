@@ -1,0 +1,22 @@
+<h2>Decomposing a simple function</h2>
+<html>
+ <head></head>
+ <body>
+  <p>David is a newbie in the Golang developer world. Could you help him decompose this function? </p> 
+  <pre><code class="language-go">func getNumberInformation(number float64) {
+    isEven := number % 2 == 0
+    squared := number * number
+    squareRoot := math.Sqrt(number)
+    opposite := -number
+    inverse := 1 / number
+    
+    fmt.Println("You entered", number)
+    fmt.Println("Even:", isEven)
+    fmt.Println("Square is", squared)
+    fmt.Println("Square root is", squareRoot)
+    fmt.Println("Opposite is", opposite)
+    fmt.Println("Inverse is", inverse)
+}</code></pre> 
+  <p>We'll decompose this code into several functions: every mathematical operation will be assigned to a separate function. Choose the functions from the list below that we need to create.</p>
+ </body>
+</html>

@@ -1,0 +1,13 @@
+type: code
+files:
+- name: main.go
+  visible: true
+  text: "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar number int\n    fmt.Scanf(\"\
+    %d\", &number)\n\n    // Write your code here.\n}"
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/16237#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 28 Feb 2022 11:02:06 UTC
+record: -1

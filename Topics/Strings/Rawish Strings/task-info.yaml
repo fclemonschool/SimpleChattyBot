@@ -1,0 +1,16 @@
+type: code
+files:
+- name: main.go
+  visible: true
+  text: "package main\n\nimport \"fmt\"    \n\nfunc help() (debug string){\n    //\
+    \ Remember the difference between raw and normal strings?         \n    debug\
+    \ = \"\\n A newline character.\" +\n             \"\\t A tab character.\" +\n\
+    \             \"\\\" Double quotation marks.\" +\n             \"\\\\ A backslash.\"\
+    \n    return\n}"
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15419#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 28 Feb 2022 10:14:01 UTC
+record: -1

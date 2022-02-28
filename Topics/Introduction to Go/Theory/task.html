@@ -1,0 +1,100 @@
+<h2>Introduction to Go</h2>
+<html>
+ <head></head>
+ <body>
+  <p></p>
+  <p>A major tool of computer science is programming languages. We use them to develop computer programs. In the modern world, there is a wide variety of programming languages, every one with its own community of fans. Let's find out what makes Go special and what's there to like about this language.</p> 
+  <h5 id="go-programming-language"> Go programming language?</h5> 
+  <p style="text-align: center;"><img alt="" height="233" name="go.svg" src="https://ucarecdn.com/c773214f-59e8-4115-9944-bb517ed2140c/" width="641"></p> 
+  <p>Just a very brief history note, if you're curious:</p> 
+  <p>In 2007, Google began developing the Go programming language as an internal project. Two Unix luminaries, Rob Pike and Ken Thompson, designed the original. Two years later, on November 10, 2009, the software was released under a liberal open-source license. A version of Go 1.0 that was ready for production was released in March 2012<strong>.</strong> There have been three versions of Go since 2012, and a Go 2.0 version is in the works! Google's team of designers works on the project along with Russ Cox, Andrew Gerrand, Ian Lance Taylor, and others. And thanks to all these people, you've got the chance to learn this programming language. </p> 
+  <p style="text-align: center;"><img alt="" height="441" name="image.png" src="https://ucarecdn.com/d30d2dce-0c31-43eb-becf-d78c1a395fb2/" width="649"></p> 
+  <p></p>
+  <div class="alert alert-warning">
+   Go is usually called Golang, the same name as the Go programming language. We will use them interchangeably in this topic.
+  </div>
+  <p></p> 
+  <h5 id="advantages-of-go"> Advantages of Go</h5> 
+  <p>Go has a clean syntax. The table below displays a syntax comparison between Go and Java when declaring and initializing variables.</p> 
+  <table align="center" border="1" cellpadding="1" cellspacing="1"> 
+   <caption>
+    Go vs Java
+   </caption> 
+   <thead> 
+    <tr> 
+     <th>Go</th> 
+     <th>Java</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td> <pre><code class="language-go">package main
+
+func main() {
+	a,b,c := 1,2,3 // a,b,c have type int
+}</code></pre> <p> </p> </td> 
+     <td> <pre><code class="language-java">public class Main {
+  public static void main(String[] args) {
+    Integer a = 1;
+    Integer b = 2;
+    Integer c = 3;
+  }
+}</code></pre> <p> </p> </td> 
+    </tr> 
+   </tbody> 
+  </table> 
+  <p>Go is a pragmatic language: its main purpose is to solve real-world problems. You can see it in the below examples:</p> 
+  <ul> 
+   <li>The original intent of Go was to be used in the server-centric world of web <a target="_blank" href="https://github.com/golang/go/wiki/GoUsers" rel="noopener noreferrer nofollow">servers</a>, storage architecture, due to the fact that Go is compiled to the native code. Go programs usually execute very fast and have a low memory footprint. That's why you can use this language as a system programming language.</li> 
+   <li>Golang excels at handling massive concurrency and making event-processing easy. That makes it a good choice for game servers and IoT solutions. Another useful link to learn about successful examples in Go is the <a target="_blank" href="https://github.com/golang/go/wiki/SuccessStories" rel="noopener noreferrer nofollow">Github wiki</a>.</li> 
+   <li>And finally, you can use Go as a general programming language. It is a great tool for developing scripts and solving text-processing problems.</li> 
+  </ul> 
+  <div style="text-align: center;"> 
+   <figure class="image" style="">
+    <img alt="" height="480" name="3.svg" src="https://ucarecdn.com/bea66549-06a0-4f9f-84cf-b2c80808fe7c/" width="700"> 
+    <figcaption>
+     Take a pause to look at how Go mascots work in different roles. Inspired by Renee French’s design
+    </figcaption> 
+   </figure> 
+  </div> 
+  <p> The language supports a range of programming paradigms, including imperative programming, object-oriented programming, procedure, and functional programming. The <a target="_blank" href="https://golang.org/doc/faq#Design" rel="noopener noreferrer nofollow">Go FAQ</a> contains an explanation of these designs by the Go team.</p> 
+  <h5 id="disadvantages-of-go">Disadvantages of Go</h5> 
+  <p>While Go has many advantages over other programming languages, it still has some disadvantages you should be aware of when learning it:</p> 
+  <ul> 
+   <li>Go's standard library <a target="_blank" href="https://golang.org/doc/faq#x_in_std" rel="noopener noreferrer nofollow">lacks</a> many basic functions (for example, finding the biggest number in a slice of numbers), so you have to implement them by hand. Besides, the Go libraries don't support GUI programming by default, which is the advantage of the Java standard library.</li> 
+   <li>As a result, Go's <a target="_blank" href="https://golang.org/doc/faq#Why_is_my_trivial_program_such_a_large_binary" rel="noopener noreferrer nofollow">standalone binaries are large</a>, because they require the embed garbage collector and the entire Go runtime as well. The "Hello World" program might consume 2MB in file size.</li> 
+  </ul> 
+  <div style="text-align: center;"> 
+   <figure class="image" style="">
+    <img alt="" height="420" name="2.svg" src="https://ucarecdn.com/6596b246-0708-49fd-92e2-8abdf18246ff/" width="500"> 
+    <figcaption>
+     Gophers is just a simple being. Inspired by Renee French’s design 
+    </figcaption> 
+   </figure> 
+  </div> 
+  <h5 id="first-go-example">First Go example</h5> 
+  <p>Let's look at the first example of Go's code. It prints the "Hello Golang" string to the terminal (suppose this example is contained within the <code class="language-go">main.go</code> file):</p> 
+  <pre><code class="language-go">package main
+
+import "fmt"
+
+func main() {
+    // Print "Hello Golang" string to the screen
+    fmt.Println("Hello Golang")
+}</code></pre> 
+  <p>When we write comments in Go, we use the C++ style: <code class="language-go">//</code> for one-line comments that we usually place at the end of the code line, and <code class="language-go">/* ... */</code> for multi-line comments. The Go programming language is organized into packages, and every Go program should have the <code class="language-go">main</code> package containing the <code class="language-go">main()</code> function, which serves as the entry point for the program (the function that is executed first).</p> 
+  <p>Now click the run button in JetBrains' Goland (or Intellij IDEA) or run the program directly in the terminal by executing the <code class="language-go">go run main.go</code> command. </p> 
+  <p style="text-align: center;"><img alt="" height="47" name="image.png" src="https://ucarecdn.com/9a4de0c8-0010-4fd5-9cd4-a60732e9e254/" width="255"></p> 
+  <p style="text-align: center;"><img alt="" height="58" name="image.png" src="https://ucarecdn.com/183b60c9-6651-4c63-bf01-cc4c080b8a58/" width="165"></p> 
+  <p>Congrats! You've just used Go for the first time.</p> 
+  <h5 id="summary">Summary</h5> 
+  <p>Here is a reminder of what we have covered so far about the Go language:</p> 
+  <ul> 
+   <li>A brief description of Go;</li> 
+   <li>What it can do;</li> 
+   <li>Reasons why Golang is so popular in computer programming;</li> 
+   <li>Learning how to write simple code in Golang.</li> 
+  </ul> 
+  <p>Once you understand Go's most basic concepts, you're ready to go further with your exploration. </p>
+ </body>
+</html>

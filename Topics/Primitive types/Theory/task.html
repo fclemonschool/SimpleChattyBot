@@ -1,0 +1,143 @@
+<h2>Primitive types</h2>
+<html>
+ <head></head>
+ <body>
+  <p>Go is a statically typed programming language. This means that variables are always of a certain type and we can't change this type. At first glance, static typing may seem inconvenient. You will spend a lot of time just trying to fix bugs that prevent the program from compiling. However, knowing the data types in advance gives us the opportunity to understand why the program doesn't work properly even at the compilation stage, and helps to avoid common mistakes. There are several built-in data types in Go, which we will now get acquainted with.</p> 
+  <h5 style="text-align: center;">Integers</h5> 
+  <p>In Go, there are the following types of <strong>integers</strong>: <code class="language-go">uint8</code>,<code class="language-go">uint16</code>, <code class="language-go">uint32</code>, <code class="language-go">uint64</code>, <code class="language-go">int8</code>, <code class="language-go">int16</code>,<code class="language-go">int32</code>, and <code class="language-go">int64.</code> 8, 16, 32, and 64 tell us how many bits each type uses. <code class="language-go">uint</code> means "<em>unsigned integer"</em>, whilst <code class="language-go">int</code> means "signed integer". An unsigned integer can only take positive values (or zero).</p> 
+  <table align="center" border="1" cellpadding="1" cellspacing="1" style="text-align: center;"> 
+   <tbody> 
+    <tr> 
+     <td>type</td> 
+     <td>description</td> 
+     <td>min value</td> 
+     <td>max value</td> 
+    </tr> 
+    <tr> 
+     <td>uint8</td> 
+     <td>unsigned 8-bit integers</td> 
+     <td>0</td> 
+     <td>255</td> 
+    </tr> 
+    <tr> 
+     <td>uint16</td> 
+     <td>unsigned 16-bit integers</td> 
+     <td>0</td> 
+     <td>65535</td> 
+    </tr> 
+    <tr> 
+     <td>uint32</td> 
+     <td>unsigned 32-bit integers</td> 
+     <td>0</td> 
+     <td>2^32</td> 
+    </tr> 
+    <tr> 
+     <td>uint64</td> 
+     <td>unsigned 64-bit integers</td> 
+     <td>0</td> 
+     <td>2^64</td> 
+    </tr> 
+    <tr> 
+     <td>uint</td> 
+     <td>platform-dependent (32 or 64-bit)</td> 
+     <td>0</td> 
+     <td>platform-dependent</td> 
+    </tr> 
+    <tr> 
+     <td>int8</td> 
+     <td>signed 8-bit integers</td> 
+     <td>-128</td> 
+     <td>127</td> 
+    </tr> 
+    <tr> 
+     <td>int16</td> 
+     <td>signed 16-bit integers</td> 
+     <td>-32768</td> 
+     <td>32767</td> 
+    </tr> 
+    <tr> 
+     <td>int32</td> 
+     <td>signed 32-bit integers</td> 
+     <td>-2 147 483 648</td> 
+     <td>2 147 483 647</td> 
+    </tr> 
+    <tr> 
+     <td>int64</td> 
+     <td>signed 64-bit integers</td> 
+     <td>-9 223 372 036 854 775 808</td> 
+     <td>9 223 372 036 854 775 807</td> 
+    </tr> 
+    <tr> 
+     <td>int</td> 
+     <td>platform-dependent (32 or 64-bit)</td> 
+     <td>platform-dependent</td> 
+     <td>platform-dependent</td> 
+    </tr> 
+   </tbody> 
+  </table> 
+  <p>There are different ways to declare a variable:</p> 
+  <pre><code class="language-go">var number1 int
+number1 = 100
+
+var number2 int = 100</code></pre> 
+  <p>The type of the variable is determined at compile-time based on the value. All these variables get the <code class="language-go">int</code> data type when compiled, despite the fact that we don't explicitly specify this:</p> 
+  <pre><code class="language-go">var number1 = 100
+number2 := 100</code></pre> 
+  <h5 style="text-align: center;">Floats</h5> 
+  <p><strong>Floating-point numbers</strong> are numbers that contain a real part (real numbers), e.g. 1.234, 123.4, 0.00001234). The way they are represented in the computer is quite difficult and is not particularly necessary for their use. For now, we just have to remember the following:</p> 
+  <p>Floating-point numbers are inaccurate. There are cases when a number can't be represented at all. For example, the result of calculating <code class="language-go">1.01 - 0.99</code> will be <code class="language-go">0.020000000000000018</code> – a number very close to the expected, but not the same.</p> 
+  <p>As integers, floating-point numbers have a certain size: 32 bits or 64 bits. Using a larger size increases the accuracy – how many digits we can use for the calculation.</p> 
+  <p>In addition to numbers, there are several other values, such as NaN, for things like 0/0, as well as positive and negative infinity (+∞ and −∞).</p> 
+  <p>There are two real types in Go: <code class="language-go">float32</code> and <code class="language-go">float64</code>. They are often called single- and double-precision real numbers, respectively. When working with real numbers, it is enough to use <code class="language-go">float32</code>, however, if you want to work with more accurate numbers, you can also use <code class="language-go">float64</code>.</p> 
+  <h5 style="text-align: center;">Booleans</h5> 
+  <p>The Boolean type – <code class="language-go">bool</code> (named after George Boole) – is a special integer type used to represent truth and false. A variable of this type will occupy only one byte. Three logical operators are used with this type:</p> 
+  <table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 300px;"> 
+   <tbody> 
+    <tr> 
+     <td>literal</td> 
+     <td>explanation</td> 
+    </tr> 
+    <tr> 
+     <td>&amp;&amp;</td> 
+     <td>AND</td> 
+    </tr> 
+    <tr> 
+     <td>||</td> 
+     <td>OR</td> 
+    </tr> 
+    <tr> 
+     <td>!</td> 
+     <td>NOT</td> 
+    </tr> 
+   </tbody> 
+  </table> 
+  <p>A variable of the bool type can take only two values: true or false.</p> 
+  <pre><code class="language-go">var b bool = true</code></pre> 
+  <p>Example of operators:</p> 
+  <pre><code class="language-go">var b1 = true
+b2 := !b1      // false
+b3 := b2 || b1 // false OR true =&gt; true
+b4 := b2 &amp;&amp; b3 // false AND true =&gt; false
+b5 := b1 &amp;&amp; b3 // true AND true =&gt; true</code></pre> 
+  <h5 style="text-align: center;">Rune and byte</h5> 
+  <p>There are also some interesting numeric data type names in Go, let's have a look at them:</p> 
+  <ul> 
+   <li><code class="language-go">rune</code> is an alias for <code class="language-go">int32</code></li> 
+   <li><code class="language-go">byte</code> is an alias for <code class="language-go">uint8</code></li> 
+  </ul> 
+  <p>Golang doesn't have a separate data type for characters. It uses <strong>byte</strong> and <strong>rune </strong>to represent character values. The byte data type can represent ASCII characters, and the rune data type can store Unicode characters in UTF-8 format.</p> 
+  <h5 style="text-align: center;">Complex numbers</h5> 
+  <p>Unlike some other languages, Go supports <strong>complex numbers:</strong> <code class="language-go">complex128</code>and <code class="language-go">complex64</code>. By now you should have guessed it – <code class="language-go">complex64</code> contains a 32-bit real and a 32-bit imaginary part, and <code class="language-go">complex128</code> has 64-bit real and imaginary numbers. Go also provides a built-in function named <code class="language-go">complex</code> for creating complex numbers. You'll need to use the complex function if you're creating a complex number with variables. Complex numbers allow all the basic arithmetic operations: <code class="language-go">+</code> , <code class="language-go">–</code> , <code class="language-go">*</code> , and <code class="language-go">/</code>.</p> 
+  <p>We will not dwell on this, but if you are still interested in it, you can refer to the <a target="_blank" href="https://pkg.go.dev/math/cmplx" rel="noopener noreferrer nofollow">documentation of the cmplx package</a>.</p> 
+  <h5 style="text-align: center;">Conclusion</h5> 
+  <p>There are several primitive types in Golang. In this topic, we've looked at them; in particular, we've covered the following built-in data types:</p> 
+  <ul> 
+   <li>signed and unsigned integers;</li> 
+   <li>floating-point numbers;</li> 
+   <li>complex numbers;</li> 
+   <li>the bool type;</li> 
+   <li>runes and bytes.</li> 
+  </ul> 
+  <p>Combining them, we can create programs using arithmetic and logical expressions.</p>
+ </body>
+</html>

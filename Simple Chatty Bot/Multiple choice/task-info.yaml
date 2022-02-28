@@ -1,0 +1,32 @@
+type: remote_edu
+files:
+- name: tests.py
+  visible: false
+  learner_created: false
+- name: main.go
+  visible: true
+  text: "package main\n\nimport (\n\t\"fmt\"\n\t\"strconv\"\n)\n\nfunc greet(name,\
+    \ year string) {\n\tfmt.Println(\"Hello! My name is \" + name + \".\")\n\tfmt.Println(\"\
+    I was created in \" + year + \".\")\n}\n\nfunc showName() {\n\tvar name string\n\
+    \tfmt.Println(\"Please, remind me your name.\")\n\tfmt.Scan(&name)\n\tfmt.Println(\"\
+    What a great name you have, \" + name + \"!\")\n}\n\nfunc guessAge() {\n\tvar\
+    \ rem3, rem5, rem7, age int\n\n\tfmt.Println(\"Let me guess your age.\")\n\tfmt.Println(\"\
+    Enter remainders of dividing your age by 3, 5 and 7.\")\n\tfmt.Scan(&rem3, &rem5,\
+    \ &rem7)\n\n\tage = (rem3*70 + rem5*21 + rem7*15) % 105\n\tfmt.Println(\"Your\
+    \ age is \" + strconv.Itoa(age) + \"; that's a good time to start programming!\"\
+    )\n}\n\nfunc count() {\n\tvar n int\n\n\tfmt.Println(\"Now I will prove to you\
+    \ that I can count to any number you want.\")\n\tfmt.Scan(&n)\n\tfor i := 0; i\
+    \ <= n; i++ {\n\t\tfmt.Printf(\"%d!\\n\", i)\n\t}\n}\n\nfunc startQuiz() {\n\t\
+    fmt.Println(\"Let's test your programming knowledge.\")\n\t// write your code\
+    \ here\n\tfmt.Println(\"Completed, have a nice day!\")\n}\n\nfunc sayGoodbye()\
+    \ {\n\tfmt.Println(\"Congratulations, have a nice day!\")\n}\n\nfunc main() {\n\
+    \tgreet(\"Aid\", \"2020\") // change it as you need\n\tshowName()\n\tguessAge()\n\
+    \tcount()\n\t// call something here\n\tsayGoodbye()\n}\n"
+  learner_created: false
+feedback_link: https://hyperskill.org/projects/206/stages/1031/implement#comment
+check_profile: hyperskill_go
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 28 Feb 2022 09:31:46 UTC
+record: -1

@@ -1,0 +1,11 @@
+type: code
+files:
+- name: main.go
+  visible: true
+  text: "package main\n\nimport (\n\t\"fmt\"\n\t\"reflect\"\n)\n\nfunc solve() uint8\
+    \ {\n\t// declare an uint8 type variable 'a' with a value of 10\n\t// edit this\
+    \ line\n\n    return a\n}"
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/16876#comment
+status: Unchecked
+record: -1

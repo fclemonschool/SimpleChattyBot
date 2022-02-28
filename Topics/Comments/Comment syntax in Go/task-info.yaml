@@ -1,0 +1,19 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Block comment start with /* and end with */
+- text: Line comments start with // and end with */
+- text: We can only use one type of comments in every project
+- text: Line comments can only go in one line, we can't split them into multiple lines
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: main.go
+  visible: true
+  text: |+
+    // You can experiment here, it won’t be checked
+
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/16690#comment
+status: Solved
+record: -1

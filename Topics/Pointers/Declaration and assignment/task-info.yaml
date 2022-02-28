@@ -1,0 +1,21 @@
+type: code
+files:
+- name: main.go
+  visible: true
+  text: |-
+    package main
+
+    import "fmt"
+
+    func solve() *string {
+        // Put your code here
+
+        return // place your pointer variable here after the return keyword
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15471#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 28 Feb 2022 11:46:30 UTC
+record: -1

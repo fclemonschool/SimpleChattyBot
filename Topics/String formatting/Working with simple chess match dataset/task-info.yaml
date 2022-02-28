@@ -1,0 +1,14 @@
+type: code
+files:
+- name: main.go
+  visible: true
+  text: "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tfmt.Printf(\n\t\t`\n%[1]s\
+    \ %[1]s %[2]s\n%[]s %[]s %[]s\n%[]s %[]s %[]s\n%[]s %[]s %[]s\n%[]s %[]s %[]s\n\
+    \        `, \"White\", \"Black\")\n}"
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/16868#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 28 Feb 2022 10:32:38 UTC
+record: -1

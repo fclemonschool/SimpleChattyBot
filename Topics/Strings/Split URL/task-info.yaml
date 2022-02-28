@@ -1,0 +1,13 @@
+type: code
+files:
+- name: main.go
+  visible: true
+  text: "package main\n\nimport \"fmt\"    \n\nfunc notBugButFeature() (string, string,\
+    \ string) {\n    // Declare three variables protocol, domain, path\n    var (\n\
+    \        protocol = \"\"  // put protocol here\n        domain   = \n        \
+    \         = \"golang-track\" // put path to resource here\n    )\n    // Sending\
+    \ values to fixer. DO NOT EDIT\n    return protocol, domain, path\n}"
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15416#comment
+status: Unchecked
+record: -1

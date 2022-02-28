@@ -1,0 +1,15 @@
+type: code
+files:
+- name: main.go
+  visible: true
+  text: "package main\n\nimport (\n\t\"fmt\"\n\t\"reflect\"\n)\n\nfunc solve() interface{}\
+    \ {\n\t// Correct the data type of the variable 'a' so that the desired value\
+    \ fits into it\n    // But you should not use unnecessarily large data types\n\
+    \tvar a ?\n\ta = -1000\n\n\treturn a\n}"
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/16877#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 28 Feb 2022 10:01:09 UTC
+record: -1

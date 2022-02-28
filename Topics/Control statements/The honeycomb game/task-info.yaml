@@ -1,0 +1,23 @@
+type: code
+files:
+- name: main.go
+  visible: true
+  text: "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar emoji = \"❓\"\n\t\
+    fmt.Scanf(\"%s\", &emoji)\n\n    // Please do not delete the emojis after the\
+    \ case statement, just fix the code errors.\n    // Also please do not delete\
+    \ or change the text within the fmt.Println functions!\n\tswitch emoji {\n\tcase\
+    \ \"⭕\":\n\t\tfmt.Println(\"You haved picked the circle. Not the easiest shape!\"\
+    )\n\tif \"\U0001f53a\":\n\t\tfmt.Println(\"You haved picked the triangle. The\
+    \ easiest shape!\")\n\telse if \"⭐\":\n\t\tfmt.Println(\"You haved picked the\
+    \ star. Easier than circle, harder than triangle.\")\n\tcase 4 \"☂️\":\n\t\tfmt.Println(\"\
+    You haved picked the umbrella. This is the hardest shape! GOOD LUCK.\")\n    else\
+    \ \"\U0001f53a\":\n\t\tfmt.Println(\"You haved picked the triangle. The easiest\
+    \ shape!\")\n\tdef:\n\t\tfmt.Println(\"You haved picked an invalid emoji. Please\
+    \ try again or be eliminated from the game.\")\n\t}\n}"
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/16242#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 28 Feb 2022 10:58:48 UTC
+record: -1

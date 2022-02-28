@@ -1,0 +1,16 @@
+type: code
+files:
+- name: main.go
+  visible: true
+  text: "package main\n\nimport \"fmt\"\n\nfunc // function name, parameters and return\
+    \ type here {\n    // write the function code block here\n}\n\nfunc main() {\n\
+    \    // Do not change this two lines of code\n    var userName string\n\tfmt.Scanf(\"\
+    %s\", &userName)\n\n\t// call the function directly, or within a fmt.Println statement\
+    \ here.\n}"
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/16395#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 28 Feb 2022 12:29:24 UTC
+record: -1
